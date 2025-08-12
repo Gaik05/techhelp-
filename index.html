@@ -512,6 +512,23 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
+        header {
+            background: var(--white);
+        }
+        
+        nav {
+            padding: 0.75rem 1rem;
+        }
+        
+        .logo {
+            font-size: 1.2rem;
+        }
+        
+        .logo svg {
+            width: 24px;
+            height: 24px;
+        }
+        
         .nav-links {
             display: none;
             position: absolute;
@@ -522,26 +539,79 @@
             flex-direction: column;
             padding: 1rem;
             box-shadow: var(--shadow);
+            z-index: 999;
         }
 
         .nav-links.active {
             display: flex;
+        }
+        
+        .nav-links a {
+            padding: 0.5rem 0;
         }
 
         .mobile-menu-toggle {
             display: block;
         }
 
+        .hero {
+            padding: 6rem 1rem 3rem;
+        }
+
         .hero h1 {
-            font-size: 2rem;
+            font-size: 1.75rem;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .cta-button, .secondary-button {
+            width: 100%;
+            max-width: 250px;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+        }
+        
+        .services, .features, .pricing, .testimonials {
+            padding: 2rem 1rem;
+        }
+        
+        .services-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .features-container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .pricing-container {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
 
         .pricing-card.featured {
             transform: scale(1);
+        }
+        
+        .phone-number {
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            padding: 1.5rem 1rem;
+            font-size: 0.875rem;
         }
     }
 
@@ -606,7 +676,7 @@
 </head>
 <body>
     <!-- Local Business Banner -->
-    <div style="background: #10b981; color: white; text-align: center; padding: 0.5rem; font-weight: 600;">
+    <div style="background: #10b981; color: white; text-align: center; padding: 0.5rem; font-weight: 600; font-size: 0.875rem;">
         🏆 Sioux Falls' #1 Rated Local Tech Support - Family Owned & Operated
     </div>
 
@@ -644,32 +714,32 @@
 </section>
 
 <!-- About Local Section -->
-<section style="padding: 3rem 5%; background: #fef3c7; border-top: 3px solid #f59e0b; border-bottom: 3px solid #f59e0b;">
+<section style="padding: 3rem 1rem; background: #fef3c7; border-top: 3px solid #f59e0b; border-bottom: 3px solid #f59e0b;">
     <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-        <h2 style="color: #92400e; font-size: 2rem; margin-bottom: 1rem;">Why Choose a Local Sioux Falls Business?</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        <h2 style="color: #92400e; font-size: 1.75rem; margin-bottom: 1rem;">Why Choose a Local Sioux Falls Business?</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏠</div>
-                <h3 style="color: #92400e;">Born & Raised</h3>
-                <p style="color: #78350f;">Lifelong Sioux Falls residents who understand our community's needs</p>
+                <h3 style="color: #92400e; font-size: 1.1rem;">Born & Raised</h3>
+                <p style="color: #78350f; font-size: 0.9rem;">Lifelong Sioux Falls residents who understand our community's needs</p>
             </div>
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤝</div>
-                <h3 style="color: #92400e;">Community First</h3>
-                <p style="color: #78350f;">We support local schools, churches, and senior centers</p>
+                <h3 style="color: #92400e; font-size: 1.1rem;">Community First</h3>
+                <p style="color: #78350f; font-size: 0.9rem;">We support local schools, churches, and senior centers</p>
             </div>
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">📍</div>
-                <h3 style="color: #92400e;">Always Near</h3>
-                <p style="color: #78350f;">Based right here in Sioux Falls - not a franchise or call center</p>
+                <h3 style="color: #92400e; font-size: 1.1rem;">Always Near</h3>
+                <p style="color: #78350f; font-size: 0.9rem;">Based right here in Sioux Falls - not a franchise or call center</p>
             </div>
             <div>
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">⏰</div>
-                <h3 style="color: #92400e;">Quick Response</h3>
-                <p style="color: #78350f;">Same-day service because we're just around the corner</p>
+                <h3 style="color: #92400e; font-size: 1.1rem;">Quick Response</h3>
+                <p style="color: #78350f; font-size: 0.9rem;">Same-day service because we're just around the corner</p>
             </div>
         </div>
-        <p style="margin-top: 2rem; font-size: 1.125rem; color: #92400e; font-weight: 600;">
+        <p style="margin-top: 2rem; font-size: 1rem; color: #92400e; font-weight: 600;">
             "We're not just a business in Sioux Falls, we're part of the Sioux Falls family."
         </p>
     </div>
