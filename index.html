@@ -555,11 +555,12 @@
             width: 100%;
             background: var(--white);
             flex-direction: column;
-            padding: 1rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            z-index: 999;
+            padding: 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 9999;
             max-height: calc(100vh - 80px);
             overflow-y: auto;
+            border-top: 2px solid var(--primary);
         }
 
         .nav-links.active {
@@ -567,10 +568,32 @@
         }
         
         .nav-links a {
-            padding: 1rem;
+            padding: 1.25rem;
             border-bottom: 1px solid #e5e7eb;
             color: var(--text-dark);
             text-decoration: none;
+            background: var(--white);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: var(--bg-light);
+        }
+        
+        .nav-links .cta-button {
+            margin: 1rem;
+            padding: 1rem;
+            border-radius: 50px;
+            text-align: center;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+        }
+        
+        .nav-links .cta-button:hover {
+            background: var(--primary-dark);
         }
 
         .mobile-menu-toggle {
@@ -942,10 +965,27 @@
 </footer>
 
 <script>
-    // Mobile menu toggle
+    // Mobile menu toggle with overlay
     function toggleMenu() {
         const navLinks = document.getElementById('navLinks');
-        navLinks.classList.toggle('active');
+        const isActive = navLinks.classList.contains('active');
+        
+        if (!isActive) {
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.id = 'menu-overlay';
+            overlay.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 998;';
+            overlay.onclick = toggleMenu;
+            document.body.appendChild(overlay);
+            navLinks.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Remove overlay
+            const overlay = document.getElementById('menu-overlay');
+            if (overlay) overlay.remove();
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     }
 
     // Smooth scroll animation for service cards
