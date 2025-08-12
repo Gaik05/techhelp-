@@ -557,7 +557,7 @@
             flex-direction: column;
             padding: 0;
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            z-index: 9999;
+            z-index: 10000;
             max-height: calc(100vh - 80px);
             overflow-y: auto;
             border-top: 2px solid var(--primary);
@@ -974,7 +974,7 @@
             // Create overlay
             const overlay = document.createElement('div');
             overlay.id = 'menu-overlay';
-            overlay.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 998;';
+            overlay.style.cssText = 'position: fixed; top: 80px; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 9998;';
             overlay.onclick = toggleMenu;
             document.body.appendChild(overlay);
             navLinks.classList.add('active');
